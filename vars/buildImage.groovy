@@ -3,9 +3,9 @@
 def call() {
    echo "Building the Docker image..."
     withCredentials([usernamePassword(credentialsId: 'docker-hub',passwordVariable: 'PASS', usernameVariable: 'USER' )]) {
-    sh 'docker build -t soumyarawat03/demo-app:jma2.0 .'
+    sh 'docker build -t soumyarawat03/demo-app:jma2.1 .'
     sh "echo $PASS | docker login -u $USER --password-stdin"
-    sh 'docker push soumyarawat03/demo-app:jma2.0'
+    sh 'docker push soumyarawat03/demo-app:jma2.1'
   }
 }
 
